@@ -1,16 +1,16 @@
 Cornet.JS
 =========
 
-> The Open-source and Humane Javascript Library for Honestly Modern Web Notifications.
+> The Open-source and Humane JavaScript Library for Honestly Modern Web Notifications.
 
 Info:
 -----
 
 Cornet.JS is not yet out of its beta stages and available for use but will be soon, along with its own website.
 
-Lisence:
+License:
 --------
 
-For the moment it's the GNU general public lisence, but that may change soon!
+For the moment it's the GNU general public license, but that may change soon!
 
 --------------------------------------------------------------------------------
