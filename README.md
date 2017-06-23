@@ -11,6 +11,6 @@ Cornet.JS is not yet out of its beta stages and available for use but will be so
 Lisence:
 --------
 
-For The moment it's GNU (:shrug:), but that may change soon!
+For The moment it's the GNU general public lisence, but that may change soon!
 
 --------------------------------------------------------------------------------
