@@ -1,13 +1,17 @@
-Cornet.JS
+Cornet.JS v0.1.1: An open source project by Toby56
 =========
-An open source project by Toby56
 
-> The Humane JavaScript Library for Modern and Honest Web Notifications.
+The Humane JavaScript Library for Modern and Honest Web Notifications.
 
 Info:
 -----
 
 Cornet.JS is not yet out of its beta stages and available for use but will be soon, along with its own website.
+
+Todo:
+-----
+
+- Find the best license
 
 License:
 --------
