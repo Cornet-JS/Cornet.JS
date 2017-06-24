@@ -1,0 +1,30 @@
+{
+  "name": "Cornet.JS",
+  "version": "0.1.1",
+  "description": "",
+  "main": "cornet.js",
+  "author": "Toby56",
+  "license": "GNU General Public License",
+  "devDependencies": {
+    "xo": "0.23.1"
+  },
+  "xo": {
+    "rules": {
+      "quotes": [1, "double"],
+      "quote-props": [1, "consistent-as-needed"],
+      "max-depth": [1, 8],
+      "no-var": 0,
+      "object-shorthand": 0
+    },
+    "semicolon": true,
+    "space": 2,
+    "envs": [
+      "browser"
+    ],
+    "ignores": [
+      "**.min.js",
+      "**.html",
+      "**/lib/**.js"
+    ]
+  }
+}

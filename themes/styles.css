@@ -1,0 +1,86 @@
+#cornetjs {
+  position: fixed;
+  height: 100%;
+  width: 4px;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: visible;
+  background-color: rgb(119, 0, 153);
+}
+
+#cornetjs .cornetjs-container {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.cornetjs-outer-container {
+  width: 0;
+  top: 20px;
+  bottom: 20px;
+  right: 14px
+}
+.cornetjs-config-position--top-right, .cornetjs-config-position--top-right .cornetjs-notifications, .cornetjs-config-position--bottom-right, .cornetjs-config-position--bottom-right .cornetjs-notifications {
+  right: 0;
+}
+.cornetjs-config-position--top-left, .cornetjs-config-position--top-left .cornetjs-notifications, .cornetjs-config-position--bottom-left, .cornetjs-config-position--bottom-left .cornetjs-notifications {
+  left: 0;
+}
+.cornetjs-notifications {
+  position: absolute;
+  height: auto;
+  width: 50vw;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.cornetjs-notification {
+  background-color: transparent;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-out;
+}
+.cornetjs-notification-inner {
+  border-radius: 4px;
+  position: relative;
+  height: auto;
+  width: 100%;
+  min-height: 48px;
+  margin: 24px 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: tomato;
+  overflow: hidden;
+}
+.cornetjs-notification-title {
+  background: orange;
+  position: relative;
+  height: 24px;
+  width: 50px;
+  padding: 0;
+  padding-left: 6px;
+  box-sizing: border-box;
+  line-height: 24px;
+  display: block;
+  float: left;
+}
+.cornetjs-notification-content {
+  background: yellow;
+  position: relative;
+  height: auto;
+  min-height: 24px;
+  padding: 6px;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 24px;
+  display: flex;
+  -webkit-flex: 1;
+}
