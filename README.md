@@ -1,6 +1,5 @@
 Cornet.JS: The Humane JavaScript Library for Modern and Honest Web Notifications.
 =================================================================================
-> An open source project by Toby56: [![Github license](https://img.shields.io/github/license/cornet-js/Cornet.JS.svg?style=flat-square)]() [![GitHub release](https://img.shields.io/github/release/cornet-js/Cornet.JS.svg?style=flat-square)]()
 
 Info:
 -----
