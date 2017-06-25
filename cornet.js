@@ -13,7 +13,12 @@ var CornetJS = {
       if (type !== (undefined || null) && type.constructor === String) {
         if (content !== (undefined || null) && content.constructor === String) {
           if (id !== (undefined || null) && id.constructor === (Number || String)) {
-
+            id = String(parseInt(id));
+          } else {
+            id = CornetJS.notifications.length + 1;
+          }
+          for (var i = 0; i < 6 - id.length;) {
+            id = "0" + id;
           }
           var elt = document.querySelector("#cornetjs ul.cornetjs-notifications").appendChild(document.createElement("li"));
           var eltClasses = ["cornetjs-notification"];
@@ -59,9 +64,7 @@ var CornetJS = {
       console.log("Cornet.JS was successful.");
     }
   },
-  update: function () {
-    setTimeout(CornetJS.update, 1000);
-  },
+  update: function () {},
   initOnLoad: function (config) {
     document.addEventListener("readystatechange", function () {
       if (document.readyState === "interactive") {
@@ -90,7 +93,9 @@ var CornetJS = {
       }
     })()) {
       for (var key1 in CornetJS.defaultConfig) {
-        CornetJS.config[key1] = CornetJS.defaultConfig[key1];
+        if (CornetJS.defaultConfig.hasOwnProperty(key1)) {
+          CornetJS.config[key1] = CornetJS.defaultConfig[key1];
+        }
       }
       for (var key2 in config) {
         if (CornetJS.defaultConfig.hasOwnProperty(key2)) {
