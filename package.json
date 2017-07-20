@@ -8,7 +8,7 @@
   "license": "GNU General Public License",
   "devDependencies": {
     "xo": "0.18.2",
-    "eslint": "4.1.1"
+    "eslint": "4.2.0"
   },
   "eslintConfig": {
     "rules": {
