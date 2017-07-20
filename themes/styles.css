@@ -18,18 +18,23 @@
   box-sizing: border-box;
   overflow: visible;
 }
+
 .cornetjs-outer-container {
   width: 0;
   top: 20px;
   bottom: 20px;
-  right: 14px
+  right: 14px;
+  left: 14px;
 }
+
 .cornetjs-config-position--top-right, .cornetjs-config-position--top-right .cornetjs-notifications, .cornetjs-config-position--bottom-right, .cornetjs-config-position--bottom-right .cornetjs-notifications {
   right: 0;
 }
+
 .cornetjs-config-position--top-left, .cornetjs-config-position--top-left .cornetjs-notifications, .cornetjs-config-position--bottom-left, .cornetjs-config-position--bottom-left .cornetjs-notifications {
   left: 0;
 }
+
 .cornetjs-notifications {
   position: absolute;
   height: auto;
@@ -40,6 +45,7 @@
   box-sizing: border-box;
   overflow: auto;
 }
+
 .cornetjs-notification {
   background-color: transparent;
   list-style: none;
@@ -48,6 +54,7 @@
   box-sizing: border-box;
   transition: all 0.5s ease-out;
 }
+
 .cornetjs-notification-inner {
   border-radius: 4px;
   position: relative;
@@ -60,18 +67,19 @@
   background-color: tomato;
   overflow: hidden;
 }
+
 .cornetjs-notification-title {
   background: orange;
   position: relative;
   height: 24px;
-  width: 50px;
   padding: 0;
   padding-left: 6px;
   box-sizing: border-box;
   line-height: 24px;
-  display: block;
-  float: left;
+  display: flex;
+  -webkit-flex: 1 1 100%;
 }
+
 .cornetjs-notification-content {
   background: yellow;
   position: relative;
@@ -82,5 +90,5 @@
   box-sizing: border-box;
   line-height: 24px;
   display: flex;
-  -webkit-flex: 1;
+  -webkit-flex: 1 1 100%;
 }
