@@ -2,7 +2,8 @@
 // An open source project by Toby56 under the GNU General Public License.
 
 (function () {
-  var CornetJS = {
+  var CornetJS = {};
+  var object = {
     notifications: [],
     notification: {
       new: function (type, content, options) {
