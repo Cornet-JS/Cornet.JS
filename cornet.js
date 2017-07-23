@@ -2,7 +2,33 @@
 // An open source project by Toby56 under the GNU General Public License.
 
 (function () {
+  // Local "IsInitiated" variables
+  var DOMIsInitiated = false;
+  var configIsInitiated = false;
+
+  // Local element variables and functions
+  var body = document.body;
+  function getElt(selector) {
+    var elt = document.querySelectorAll(selector);
+    return (elt === null ? false : elt);
+  }
+
+  // Main global variable
   var CornetJS = {};
+
+  // Global element variables and functions
+  CornetJS.DOM = null;
+
+  // Global "update" functions
+  CornetJS.updateDOMClasses = function () {
+    if (DOMIsInitiated === false) {
+      return "DOM is not Initiated";
+    }
+    if (CornetJS.DOM.constructor) {
+
+    }
+  };
+
   var object = {
     notifications: [],
     notification: {
@@ -43,7 +69,7 @@
           return logCallback("FatalTypeError: Options were not an Object");
         }
 
-        var elt = document.querySelector("#cornetjs ul.cornetjs-notifications").appendChild(document.createElement("li"));
+        var elt = getElt("#cornetjs ul.cornetjs-notifications").appendChild(document.createElement("li"));
         var eltClasses = ["cornetjs-notification"];
         elt.className = eltClasses.join(" ");
 
@@ -153,14 +179,13 @@
         }
       }
 
-      var elt = document.body.appendChild(document.createElement("div"));
+      var elt = body.appendChild(document.createElement("div"));
       elt.setAttribute("id", "cornetjs");
-      elt = document.getElementById("cornetjs");
       elt.innerHTML = "<div class='cornetjs-container cornetjs-outer-container'><ul class='cornetjs-notifications'><li class='cornetjs-notification'><div class='cornetjs-notification-inner'><div class='cornetjs-notification-title'>Title</div><div class='cornetjs-notification-content'>Content</div></div></li></ul></div>";
       var eltProperties = ["theme", "position"];
       var eltClasses = [];
       for (var index1 = 0; index1 < eltProperties.length; index1++) {
-        eltClasses.push("cornetjs-config-" + eltProperties[index1] + "--" + CornetJS.configuration[eltProperties[index1]]);
+        eltClasses.push("config-" + eltProperties[index1] + "--" + CornetJS.configuration[eltProperties[index1]]);
       }
       elt.setAttribute("class", eltClasses.join(" "));
       for (var index2 = 0; index2 < eltProperties.length; index2++) {
