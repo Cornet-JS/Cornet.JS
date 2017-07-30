@@ -15,7 +15,7 @@
   "homepage": "https://cornet-js.github.io/",
   "devDependencies": {
     "xo": "0.18.2",
-    "eslint": "4.2.0"
+    "eslint": "4.3.0"
   },
   "xo": {
     "rules": {
