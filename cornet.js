@@ -2,6 +2,7 @@
 // An open source project by Toby56 under the GNU General Public License.
 
 (function () {
+  // LOCAL VARIABLES
   // Local "IsInitiated" variables
   var DOMIsInitiated = false;
   var configIsInitiated = false;
@@ -13,6 +14,15 @@
     return (elt === null ? false : elt);
   }
 
+  // Other local variables
+  function logCallback(newCallback, callback) {
+    if (newCallback) {
+      callback = callback.concat(newCallback);
+    }
+    return console.log("[Cornet.JS]\n  " + callback.join(",\n  "));
+  }
+
+  // GLOBAL VARIABLES
   // Main global variable
   var CornetJS = {};
 
@@ -24,8 +34,37 @@
     if (DOMIsInitiated === false) {
       return "DOM is not Initiated";
     }
-    if (CornetJS.DOM.constructor) {
+  };
 
+  // Global "init" functions
+  CornetJS.initDOM = function () {
+    var callback = [];
+    if (DOMIsInitiated === true) {
+      return "DOM is already Initiated";
+    }
+    var elt = body.appendChild(document.createElement("div"));
+    elt.setAttribute("id", "cornetjs");
+    elt.innerHTML = "<div class='cornetjs-container cornetjs-outer-container'><ul class='cornetjs-notifications'><li class='cornetjs-notification'><div class='cornetjs-notification-inner'><div class='cornetjs-notification-title'>Title</div><div class='cornetjs-notification-content'>Content</div></div></li></ul></div>";
+    var eltProperties = ["theme", "position"];
+    var eltClasses = [];
+    for (var index1 = 0; index1 < eltProperties.length; index1++) {
+      eltClasses.push("config-" + eltProperties[index1] + "--" + CornetJS.configuration[eltProperties[index1]]);
+    }
+    elt.setAttribute("class", eltClasses.join(" "));
+    for (var index2 = 0; index2 < eltProperties.length; index2++) {
+      elt.setAttribute("data-config-" + eltProperties[index2], CornetJS.configuration[eltProperties[index2]]);
+    }
+
+    if (CornetJS.configuration.callback !== null && CornetJS.configuration.callback.constructor === Function) {
+      try {
+        var fnc = CornetJS.configuration.callback();
+        if (callback.length > 0) {
+          logCallback(undefined, callback);
+        }
+        return fnc;
+      } catch (err) {
+        return logCallback(err.name + ": " + err.message, callback);
+      }
     }
   };
 
@@ -33,14 +72,9 @@
     notifications: [],
     notification: {
       new: function (type, content, options) {
-        var optionsDefaults = {};
         var callback = [];
-        function logCallback(newCallback) {
-          if (newCallback) {
-            callback = callback.concat(newCallback);
-          }
-          return console.log("[Cornet.JS]\n  " + callback.join(",\n  "));
-        }
+
+        var optionsDefaults = {};
 
         if (type === undefined || type === null || type.constructor !== String) {
           return logCallback("FatalTypeError: Type was not a String");
@@ -128,12 +162,6 @@
     },
     init: function (configuration) {
       var callback = [];
-      function logCallback(newCallback) {
-        if (newCallback) {
-          callback = callback.concat(newCallback);
-        }
-        return console.log("[Cornet.JS]\n  " + callback.join(",\n  "));
-      }
       var configurationDefaults = {
         "theme": "simple",
         "position": "bottom-right",
@@ -176,31 +204,6 @@
           CornetJS.configuration[key2] = configuration[key2];
         } else {
           callback.push("Warning: Extra property in configuration \"" + key2 + "\"");
-        }
-      }
-
-      var elt = body.appendChild(document.createElement("div"));
-      elt.setAttribute("id", "cornetjs");
-      elt.innerHTML = "<div class='cornetjs-container cornetjs-outer-container'><ul class='cornetjs-notifications'><li class='cornetjs-notification'><div class='cornetjs-notification-inner'><div class='cornetjs-notification-title'>Title</div><div class='cornetjs-notification-content'>Content</div></div></li></ul></div>";
-      var eltProperties = ["theme", "position"];
-      var eltClasses = [];
-      for (var index1 = 0; index1 < eltProperties.length; index1++) {
-        eltClasses.push("config-" + eltProperties[index1] + "--" + CornetJS.configuration[eltProperties[index1]]);
-      }
-      elt.setAttribute("class", eltClasses.join(" "));
-      for (var index2 = 0; index2 < eltProperties.length; index2++) {
-        elt.setAttribute("data-config-" + eltProperties[index2], CornetJS.configuration[eltProperties[index2]]);
-      }
-
-      if (CornetJS.configuration.callback !== null && CornetJS.configuration.callback.constructor === Function) {
-        try {
-          var fnc = CornetJS.configuration.callback();
-          if (callback.length > 0) {
-            logCallback();
-          }
-          return fnc;
-        } catch (err) {
-          return logCallback(err.name + ": " + err.message);
         }
       }
     }
