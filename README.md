@@ -1,10 +1,9 @@
 Cornet.JS: The Humane JavaScript Library for Modern and Honest Web Notifications.
 =================================================================================
 
-[![Join the chat at https://gitter.im/cornet-js/Cornet.JS](https://badges.gitter.im/cornet-js/Cornet.JS.svg)](https://gitter.im/cornet-js/Cornet.JS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 An open source project by Toby56 under the GNU General Public License.
 
-[![GitHub Stars](https://img.shields.io/github/stars/cornet-js/Cornet.JS.svg?style=social)](https://github.com/cornet-js/Cornet.JS) [![BitHound Score](https://www.bithound.io/github/cornet-js/Cornet.JS/badges/score.svg)](https://www.bithound.io/github/cornet-js/Cornet.JS) [![Github Downloads All Releases](https://img.shields.io/github/downloads/cornet-js/Cornet.JS/total.svg)](https://github.com/cornet-js/Cornet.JS/releases) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+[![GitHub Stars](https://img.shields.io/github/stars/cornet-js/Cornet.JS.svg?style=social)](https://github.com/cornet-js/Cornet.JS) [![BitHound Score](https://www.bithound.io/github/cornet-js/Cornet.JS/badges/score.svg)](https://www.bithound.io/github/cornet-js/Cornet.JS) [![Github Downloads All Releases](https://img.shields.io/github/downloads/cornet-js/Cornet.JS/total.svg)](https://github.com/cornet-js/Cornet.JS/releases) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) [![Join the chat at https://gitter.im/cornet-js/Cornet.JS](https://badges.gitter.im/cornet-js/Cornet.JS.svg)](https://gitter.im/cornet-js/Cornet.JS?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Info:
 -----
