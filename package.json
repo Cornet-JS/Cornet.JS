@@ -14,11 +14,13 @@
   },
   "homepage": "https://cornet-js.github.io/",
   "scripts": {
-    "test": "xo"
+    "test": "xo && ava"
   },
   "devDependencies": {
-    "xo": "0.18.2",
-    "eslint": "4.3.0"
+    "ava": "^0.21.0",
+    "bithound": "^1.7.0",
+    "eslint": "4.3.0",
+    "xo": "0.18.2"
   },
   "xo": {
     "rules": {
@@ -38,7 +40,8 @@
     "semicolon": true,
     "space": 2,
     "envs": [
-      "browser"
+      "browser",
+      "node"
     ],
     "ignores": [
       "**.min.js",
@@ -64,5 +67,8 @@
   },
   "directories": {
     "test": "test"
+  },
+  "dependencies": {
+    "primer-css": "^9.2.0"
   }
 }
