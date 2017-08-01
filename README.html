@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8" />
+      <title>README</title>
+      <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(181, 170, 183); overflow: auto; background-color: rgb(37, 26, 39); }
+.markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
+.markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) h1 { font-size: 2.4em; font-weight: 300; }
+.markdown-preview:not([data-use-github-style]) h2 { font-size: 1.8em; font-weight: 400; }
+.markdown-preview:not([data-use-github-style]) h3 { font-size: 1.5em; font-weight: 500; }
+.markdown-preview:not([data-use-github-style]) h4 { font-size: 1.2em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h5 { font-size: 1.1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) h6 { font-size: 1em; font-weight: 600; }
+.markdown-preview:not([data-use-github-style]) strong { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) del { color: rgb(219, 214, 220); }
+.markdown-preview:not([data-use-github-style]) a, .markdown-preview:not([data-use-github-style]) a code { color: rgb(203, 104, 50); }
+.markdown-preview:not([data-use-github-style]) img { max-width: 100%; }
+.markdown-preview:not([data-use-github-style]) > p { margin-top: 0px; margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) > ul, .markdown-preview:not([data-use-github-style]) > ol { margin-bottom: 1.5em; }
+.markdown-preview:not([data-use-github-style]) blockquote { margin: 1.5em 0px; font-size: inherit; color: rgb(219, 214, 220); border-color: rgb(83, 59, 88); border-width: 4px; }
+.markdown-preview:not([data-use-github-style]) hr { margin: 3em 0px; border-top: 2px dashed rgb(83, 59, 88); background: none; }
+.markdown-preview:not([data-use-github-style]) table { margin: 1.5em 0px; }
+.markdown-preview:not([data-use-github-style]) th { color: rgb(255, 255, 255); }
+.markdown-preview:not([data-use-github-style]) th, .markdown-preview:not([data-use-github-style]) td { padding: 0.66em 1em; border: 1px solid rgb(83, 59, 88); }
+.markdown-preview:not([data-use-github-style]) code { color: rgb(255, 255, 255); background-color: rgb(60, 42, 63); }
+.markdown-preview:not([data-use-github-style]) pre.editor-colors { margin: 1.5em 0px; padding: 1em; font-size: 0.92em; border-radius: 3px; background-color: rgb(49, 34, 51); }
+.markdown-preview:not([data-use-github-style]) kbd { color: rgb(255, 255, 255); border-width: 1px 1px 2px; border-style: solid; border-color: rgb(83, 59, 88) rgb(83, 59, 88) rgb(66, 46, 70); background-color: rgb(60, 42, 63); }
+.markdown-preview[data-use-github-style] { font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif; line-height: 1.6; word-wrap: break-word; padding: 30px; font-size: 16px; color: rgb(51, 51, 51); overflow: scroll; background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] > :first-child { margin-top: 0px !important; }
+.markdown-preview[data-use-github-style] > :last-child { margin-bottom: 0px !important; }
+.markdown-preview[data-use-github-style] a:not([href]) { color: inherit; text-decoration: none; }
+.markdown-preview[data-use-github-style] .absent { color: rgb(204, 0, 0); }
+.markdown-preview[data-use-github-style] .anchor { position: absolute; top: 0px; left: 0px; display: block; padding-right: 6px; padding-left: 30px; margin-left: -30px; }
+.markdown-preview[data-use-github-style] .anchor:focus { outline: none; }
+.markdown-preview[data-use-github-style] h1, .markdown-preview[data-use-github-style] h2, .markdown-preview[data-use-github-style] h3, .markdown-preview[data-use-github-style] h4, .markdown-preview[data-use-github-style] h5, .markdown-preview[data-use-github-style] h6 { position: relative; margin-top: 1em; margin-bottom: 16px; font-weight: bold; line-height: 1.4; }
+.markdown-preview[data-use-github-style] h1 .octicon-link, .markdown-preview[data-use-github-style] h2 .octicon-link, .markdown-preview[data-use-github-style] h3 .octicon-link, .markdown-preview[data-use-github-style] h4 .octicon-link, .markdown-preview[data-use-github-style] h5 .octicon-link, .markdown-preview[data-use-github-style] h6 .octicon-link { display: none; color: rgb(0, 0, 0); vertical-align: middle; }
+.markdown-preview[data-use-github-style] h1:hover .anchor, .markdown-preview[data-use-github-style] h2:hover .anchor, .markdown-preview[data-use-github-style] h3:hover .anchor, .markdown-preview[data-use-github-style] h4:hover .anchor, .markdown-preview[data-use-github-style] h5:hover .anchor, .markdown-preview[data-use-github-style] h6:hover .anchor { padding-left: 8px; margin-left: -30px; text-decoration: none; }
+.markdown-preview[data-use-github-style] h1:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h2:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h3:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h4:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h5:hover .anchor .octicon-link, .markdown-preview[data-use-github-style] h6:hover .anchor .octicon-link { display: inline-block; }
+.markdown-preview[data-use-github-style] h1 tt, .markdown-preview[data-use-github-style] h2 tt, .markdown-preview[data-use-github-style] h3 tt, .markdown-preview[data-use-github-style] h4 tt, .markdown-preview[data-use-github-style] h5 tt, .markdown-preview[data-use-github-style] h6 tt, .markdown-preview[data-use-github-style] h1 code, .markdown-preview[data-use-github-style] h2 code, .markdown-preview[data-use-github-style] h3 code, .markdown-preview[data-use-github-style] h4 code, .markdown-preview[data-use-github-style] h5 code, .markdown-preview[data-use-github-style] h6 code { font-size: inherit; }
+.markdown-preview[data-use-github-style] h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h1 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+.markdown-preview[data-use-github-style] h2 .anchor { line-height: 1; }
+.markdown-preview[data-use-github-style] h3 { font-size: 1.5em; line-height: 1.43; }
+.markdown-preview[data-use-github-style] h3 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h4 { font-size: 1.25em; }
+.markdown-preview[data-use-github-style] h4 .anchor { line-height: 1.2; }
+.markdown-preview[data-use-github-style] h5 { font-size: 1em; }
+.markdown-preview[data-use-github-style] h5 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] h6 { font-size: 1em; color: rgb(119, 119, 119); }
+.markdown-preview[data-use-github-style] h6 .anchor { line-height: 1.1; }
+.markdown-preview[data-use-github-style] p, .markdown-preview[data-use-github-style] blockquote, .markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol, .markdown-preview[data-use-github-style] dl, .markdown-preview[data-use-github-style] table, .markdown-preview[data-use-github-style] pre { margin-top: 0px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] hr { height: 4px; padding: 0px; margin: 16px 0px; border: 0px none; background-color: rgb(231, 231, 231); }
+.markdown-preview[data-use-github-style] ul, .markdown-preview[data-use-github-style] ol { padding-left: 2em; }
+.markdown-preview[data-use-github-style] ul.no-list, .markdown-preview[data-use-github-style] ol.no-list { padding: 0px; list-style-type: none; }
+.markdown-preview[data-use-github-style] ul ul, .markdown-preview[data-use-github-style] ul ol, .markdown-preview[data-use-github-style] ol ol, .markdown-preview[data-use-github-style] ol ul { margin-top: 0px; margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] li > p { margin-top: 16px; }
+.markdown-preview[data-use-github-style] dl { padding: 0px; }
+.markdown-preview[data-use-github-style] dl dt { padding: 0px; margin-top: 16px; font-size: 1em; font-style: italic; font-weight: bold; }
+.markdown-preview[data-use-github-style] dl dd { padding: 0px 16px; margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] blockquote { padding: 0px 15px; color: rgb(119, 119, 119); border-left: 4px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] blockquote > :first-child { margin-top: 0px; }
+.markdown-preview[data-use-github-style] blockquote > :last-child { margin-bottom: 0px; }
+.markdown-preview[data-use-github-style] table { display: block; width: 100%; overflow: auto; word-break: keep-all; }
+.markdown-preview[data-use-github-style] table th { font-weight: bold; }
+.markdown-preview[data-use-github-style] table th, .markdown-preview[data-use-github-style] table td { padding: 6px 13px; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] table tr { border-top: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255); }
+.markdown-preview[data-use-github-style] table tr:nth-child(2n) { background-color: rgb(248, 248, 248); }
+.markdown-preview[data-use-github-style] img { max-width: 100%; box-sizing: border-box; }
+.markdown-preview[data-use-github-style] .emoji { max-width: none; }
+.markdown-preview[data-use-github-style] span.frame { display: block; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.frame > span { display: block; float: left; width: auto; padding: 7px; margin: 13px 0px 0px; overflow: hidden; border: 1px solid rgb(221, 221, 221); }
+.markdown-preview[data-use-github-style] span.frame span img { display: block; float: left; }
+.markdown-preview[data-use-github-style] span.frame span span { display: block; padding: 5px 0px 0px; clear: both; color: rgb(51, 51, 51); }
+.markdown-preview[data-use-github-style] span.align-center { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-center > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-center span img { margin: 0px auto; text-align: center; }
+.markdown-preview[data-use-github-style] span.align-right { display: block; overflow: hidden; clear: both; }
+.markdown-preview[data-use-github-style] span.align-right > span { display: block; margin: 13px 0px 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] span.align-right span img { margin: 0px; text-align: right; }
+.markdown-preview[data-use-github-style] span.float-left { display: block; float: left; margin-right: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-left span { margin: 13px 0px 0px; }
+.markdown-preview[data-use-github-style] span.float-right { display: block; float: right; margin-left: 13px; overflow: hidden; }
+.markdown-preview[data-use-github-style] span.float-right > span { display: block; margin: 13px auto 0px; overflow: hidden; text-align: right; }
+.markdown-preview[data-use-github-style] code, .markdown-preview[data-use-github-style] tt { padding: 0.2em 0px; margin: 0px; font-size: 85%; border-radius: 3px; background-color: rgba(0, 0, 0, 0.0392157); }
+.markdown-preview[data-use-github-style] code::before, .markdown-preview[data-use-github-style] tt::before, .markdown-preview[data-use-github-style] code::after, .markdown-preview[data-use-github-style] tt::after { letter-spacing: -0.2em; content: " "; }
+.markdown-preview[data-use-github-style] code br, .markdown-preview[data-use-github-style] tt br { display: none; }
+.markdown-preview[data-use-github-style] del code { text-decoration: inherit; }
+.markdown-preview[data-use-github-style] pre > code { padding: 0px; margin: 0px; font-size: 100%; word-break: normal; white-space: pre; border: 0px; background: transparent; }
+.markdown-preview[data-use-github-style] .highlight { margin-bottom: 16px; }
+.markdown-preview[data-use-github-style] .highlight pre, .markdown-preview[data-use-github-style] pre { padding: 16px; overflow: auto; font-size: 85%; line-height: 1.45; border-radius: 3px; background-color: rgb(247, 247, 247); }
+.markdown-preview[data-use-github-style] .highlight pre { margin-bottom: 0px; word-break: normal; }
+.markdown-preview[data-use-github-style] pre { word-wrap: normal; }
+.markdown-preview[data-use-github-style] pre code, .markdown-preview[data-use-github-style] pre tt { display: inline; max-width: initial; padding: 0px; margin: 0px; overflow: initial; line-height: inherit; word-wrap: normal; border: 0px; background-color: transparent; }
+.markdown-preview[data-use-github-style] pre code::before, .markdown-preview[data-use-github-style] pre tt::before, .markdown-preview[data-use-github-style] pre code::after, .markdown-preview[data-use-github-style] pre tt::after { content: normal; }
+.markdown-preview[data-use-github-style] kbd { display: inline-block; padding: 3px 5px; font-size: 11px; line-height: 10px; color: rgb(85, 85, 85); vertical-align: middle; border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(187, 187, 187); border-radius: 3px; box-shadow: rgb(187, 187, 187) 0px -1px 0px inset; background-color: rgb(252, 252, 252); }
+.markdown-preview[data-use-github-style] a { color: rgb(51, 122, 183); }
+.markdown-preview[data-use-github-style] code { color: inherit; }
+.markdown-preview[data-use-github-style] pre.editor-colors { padding: 0.8em 1em; margin-bottom: 1em; font-size: 0.85em; border-radius: 4px; overflow: auto; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors .horizontal-scrollbar { visibility: hidden; }
+.scrollbars-visible-always .markdown-preview pre.editor-colors:hover .vertical-scrollbar, .scrollbars-visible-always .markdown-preview pre.editor-colors:hover .horizontal-scrollbar { visibility: visible; }
+.markdown-preview .task-list-item-checkbox { position: absolute; margin: 0.25em 0px 0px -1.4em; }
+.bracket-matcher .region {
+  border-bottom: 1px dotted lime;
+  position: absolute;
+}
+
+.markdown-themeable-pdf-page-break {
+  border-top: 2px dotted #0098ff;
+}
+.markdown-themeable-pdf-page-break span {
+  opacity: .35;
+}
+
+.spell-check-misspelling .region {
+  border-bottom: 2px dotted rgba(255, 51, 51, 0.75);
+}
+.spell-check-corrections {
+  width: 25em !important;
+}
+
+pre.editor-colors {
+  color: #b5aab7;
+  background-color: #251a27;
+}
+pre.editor-colors .line.cursor-line {
+  background-color: rgba(53, 42, 55, 0.26);
+}
+pre.editor-colors .invisible {
+  color: #b5aab7;
+}
+pre.editor-colors .cursor {
+  border-color: #cb6832;
+  border-left-width: 2px;
+}
+pre.editor-colors .selection .region {
+  background-color: #352a37;
+}
+pre.editor-colors .bracket-matcher .region {
+  border-bottom: 1px solid #cb6832;
+  background-color: rgba(203, 104, 50, 0.2);
+}
+pre.editor-colors .invisible-character {
+  color: rgba(133, 122, 135, 0.25);
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .indent-guide {
+  color: #352a37;
+}
+pre.editor-colors .wrap-guide {
+  background-color: #352a37;
+}
+pre.editor-colors .find-result .region.region.region,
+pre.editor-colors .current-result .region.region.region {
+  border-radius: 0px;
+  background-color: rgba(203, 104, 50, 0.16);
+  transition: border-color 0.4s;
+}
+pre.editor-colors .find-result .region.region.region {
+  border: 2px solid transparent;
+}
+pre.editor-colors .current-result .region.region.region {
+  border: 2px solid #cb6832;
+  transition-duration: .1s;
+}
+pre.editor-colors .gutter .line-number {
+  color: #857a87;
+  -webkit-font-smoothing: antialiased;
+}
+pre.editor-colors .gutter .line-number.git-line-removed:before {
+  bottom: -3px;
+}
+pre.editor-colors .gutter .line-number.git-line-removed:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 25px;
+  border-bottom: 1px dotted rgba(194, 90, 91, 0.5);
+  pointer-events: none;
+}
+pre.editor-colors .gutter .line-number.cursor-line {
+  color: #cb6832;
+  background-color: #352a37;
+}
+pre.editor-colors .gutter .line-number.cursor-line-no-selection {
+  background-color: transparent;
+  font-weight: bold;
+}
+pre.editor-colors .gutter .line-number .icon-right {
+  color: #b5aab7;
+}
+pre.editor-colors .gutter .line-number.folded,
+pre.editor-colors .gutter .line-number:after,
+pre.editor-colors .fold-marker:after {
+  color: #cb6832;
+}
+.text1 {
+  color: #b5aab7;
+}
+.text2 {
+  color: #857a87;
+}
+.primary1 {
+  color: #5a7acd;
+}
+.primary2 {
+  color: #aa6bc5;
+}
+.primary3 {
+  color: #4da35c;
+}
+.secondary1 {
+  color: #c25783;
+}
+.secondary2 {
+  color: #439b9b;
+}
+.tertiary1 {
+  color: #cb6832;
+}
+.tertiary2 {
+  color: #c25a5b;
+}
+.tertiary3 {
+  color: #ba8a00;
+}
+.syntax--meta,
+.syntax--support {
+  color: #b5aab7;
+}
+.syntax--html.syntax--elements,
+.syntax--entity,
+.syntax--tag,
+.syntax--function-call {
+  color: #5a7acd;
+}
+.syntax--variable,
+.syntax--attribute-name,
+.syntax--character.syntax--escape {
+  color: #aa6bc5;
+}
+.syntax--constant,
+.syntax--storage.syntax--type {
+  color: #4da35c;
+}
+.syntax--string,
+.syntax--string.syntax--punctuation {
+  color: #c25783;
+}
+.syntax--keyword,
+.syntax--storage {
+  color: #439b9b;
+}
+.syntax--punctuation,
+.syntax--bracket,
+.syntax--brace {
+  color: #857a87;
+}
+.syntax--comment {
+  color: #857a87;
+  font-style: italic;
+}
+.syntax--bold {
+  font-weight: bold;
+}
+.syntax--italic {
+  font-style: italic;
+}
+.syntax--c .syntax--parens,
+.syntax--c .syntax--block {
+  color: #aa6bc5;
+}
+.syntax--c .syntax--parens .syntax--punctuation,
+.syntax--c .syntax--block .syntax--punctuation,
+.syntax--c .syntax--parens .syntax--bracket,
+.syntax--c .syntax--block .syntax--bracket,
+.syntax--c .syntax--parens .syntax--brace,
+.syntax--c .syntax--block .syntax--brace {
+  color: #857a87;
+}
+.syntax--c .syntax--comment {
+  color: #439b9b;
+}
+.syntax--source.syntax--clojure .syntax--expression {
+  color: #4da35c;
+}
+.syntax--source.syntax--clojure .syntax--expression .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--source.syntax--clojure .syntax--symbol {
+  color: #aa6bc5;
+}
+.syntax--source.syntax--clojure .syntax--vector {
+  color: #c25a5b;
+}
+.syntax--coffee.syntax--source {
+  color: #b5aab7;
+}
+.syntax--coffee .syntax--string.syntax--quoted {
+  color: #c25783;
+}
+.syntax--coffee .syntax--punctuation.syntax--definition.syntax--string {
+  color: #c25783;
+}
+.syntax--coffee .syntax--keyword.syntax--control {
+  color: #4da35c;
+}
+.syntax--coffee .syntax--keyword.syntax--control.syntax--anchor {
+  color: #439b9b;
+}
+.syntax--coffee .syntax--keyword.syntax--operator {
+  color: #b5aab7;
+}
+.syntax--coffee .syntax--keyword.syntax--other {
+  color: #439b9b;
+}
+.syntax--source.syntax--cs .syntax--meta {
+  color: #c25a5b;
+}
+.syntax--source.syntax--cs .syntax--method {
+  color: #aa6bc5;
+}
+.syntax--css.syntax--source {
+  color: #857a87;
+}
+.syntax--css.syntax--at-rule {
+  color: #5a7acd;
+}
+.syntax--css.syntax--at-rule .syntax--keyword.syntax--punctuation {
+  color: inherit;
+}
+.syntax--css.syntax--attribute-name.syntax--id,
+.syntax--css.syntax--attribute-name.syntax--class,
+.syntax--css.syntax--attribute-name.syntax--parent-selector {
+  color: #5a7acd;
+}
+.syntax--gfm {
+  color: #b5aab7;
+}
+.syntax--gfm .syntax--punctuation,
+.syntax--gfm .syntax--bracket,
+.syntax--gfm .syntax--brace {
+  color: #857a87;
+}
+.syntax--gfm .syntax--link {
+  color: #aa6bc5;
+}
+.syntax--gfm .syntax--link .syntax--entity {
+  border-bottom: thin solid;
+}
+.syntax--gfm.syntax--markup {
+  color: #b5aab7;
+}
+.syntax--gfm.syntax--markup.syntax--bold {
+  font-weight: bold;
+}
+.syntax--gfm.syntax--markup.syntax--italic {
+  font-style: italic;
+}
+.syntax--gfm.syntax--markup.syntax--strike {
+  color: #857a87;
+  text-decoration: line-through;
+}
+.syntax--gfm.syntax--markup.syntax--raw,
+.syntax--gfm.syntax--markup.syntax--raw .syntax--support,
+.syntax--gfm.syntax--markup.syntax--code .syntax--support {
+  color: #439b9b;
+}
+.syntax--gfm.syntax--markup.syntax--underline.syntax--link {
+  color: #857a87;
+}
+.syntax--gfm.syntax--comment {
+  color: #857a87;
+}
+.syntax--gfm.syntax--comment.syntax--quote {
+  color: #b5aab7;
+}
+.syntax--gfm.syntax--table {
+  color: #b5aab7;
+}
+.syntax--gfm.syntax--table .syntax--border,
+.syntax--gfm.syntax--table .syntax--pipe {
+  color: #857a87;
+}
+.syntax--gfm.syntax--variable,
+.syntax--gfm.syntax--entity {
+  color: #aa6bc5;
+}
+.syntax--gfm.syntax--variable.syntax--list {
+  color: #b5aab7;
+  font-weight: bold;
+}
+.syntax--gfm.syntax--support {
+  color: #b5aab7;
+}
+.syntax--gfm.syntax--heading {
+  color: #5a7acd;
+  font-weight: bold;
+}
+.syntax--gfm.syntax--heading.syntax--marker {
+  color: #5a7acd;
+}
+.syntax--haskell.syntax--source {
+  color: #aa6bc5;
+}
+.syntax--haskell.syntax--source .syntax--punctuation,
+.syntax--haskell.syntax--source .syntax--bracket,
+.syntax--haskell.syntax--source .syntax--brace {
+  color: #857a87;
+}
+.syntax--html.syntax--meta {
+  color: #857a87;
+}
+.syntax--html.syntax--text {
+  color: #b5aab7;
+}
+.syntax--html .syntax--string {
+  color: #b5aab7;
+}
+.syntax--html .syntax--string .syntax--id {
+  color: #c25783;
+}
+.syntax--html .syntax--string.syntax--quoted {
+  color: #c25783;
+}
+.syntax--html .syntax--string.syntax--punctuation {
+  color: #c25783;
+}
+.syntax--jade.syntax--text {
+  color: #c25a5b;
+}
+.syntax--jade .syntax--meta.syntax--control.syntax--flow {
+  color: #aa6bc5;
+}
+.syntax--jade .syntax--constant.syntax--name.syntax--attribute.syntax--tag {
+  color: #857a87;
+}
+.syntax--jade .syntax--attribute-name.syntax--id {
+  color: #4da35c;
+}
+.syntax--jade .syntax--string.syntax--quoted {
+  color: #c25783;
+}
+.syntax--jade .syntax--string.syntax--interpolated {
+  color: #439b9b;
+}
+.syntax--java .syntax--method {
+  color: #aa6bc5;
+}
+.syntax--java .syntax--method .syntax--punctuation,
+.syntax--java .syntax--method .syntax--bracket,
+.syntax--java .syntax--method .syntax--brace {
+  color: #857a87;
+}
+.syntax--java .syntax--dereference {
+  color: #857a87;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator {
+  color: #b5aab7;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--typeof {
+  color: #439b9b;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--logical {
+  color: #439b9b;
+}
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--delete,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--in,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--of,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--instanceof,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--new,
+.syntax--source.syntax--js .syntax--keyword.syntax--operator.syntax--void {
+  color: #c25a5b;
+}
+.syntax--source.syntax--js .syntax--meta.syntax--arguments {
+  color: #b5aab7;
+}
+.syntax--json .syntax--string {
+  color: #5a7acd;
+}
+.syntax--json .syntax--string .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--json .syntax--value > .syntax--string {
+  color: #aa6bc5;
+}
+.syntax--json .syntax--value > .syntax--string .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--json .syntax--value .syntax--constant {
+  color: #439b9b;
+}
+.syntax--less.syntax--variable:first-child {
+  color: #5a7acd;
+}
+.syntax--less .syntax--mixin {
+  color: #c25783;
+}
+.syntax--mediawiki {
+  color: #5a7acd;
+}
+.syntax--mediawiki .syntax--punctuation,
+.syntax--mediawiki .syntax--bracket,
+.syntax--mediawiki .syntax--brace {
+  color: #857a87;
+}
+.syntax--mediawiki .syntax--wiki-link {
+  color: #aa6bc5;
+}
+.syntax--mediawiki .syntax--heading {
+  color: #4da35c;
+}
+.syntax--mediawiki .syntax--function-call {
+  color: #c25783;
+}
+.syntax--mediawiki .syntax--value {
+  color: #4da35c;
+}
+.syntax--mediawiki .syntax--fix_this_later {
+  color: #aa6bc5;
+}
+.syntax--mediawiki .syntax--pipe,
+.syntax--mediawiki .syntax--link,
+.syntax--mediawiki .syntax--tag {
+  color: #857a87;
+}
+.syntax--php .syntax--string-contents {
+  color: #c25783;
+}
+.syntax--php .syntax--keyword {
+  color: #4da35c;
+}
+.syntax--php .syntax--keyword.syntax--other {
+  color: #857a87;
+}
+.syntax--php .syntax--keyword.syntax--operator {
+  color: #aa6bc5;
+}
+.syntax--php .syntax--punctuation.syntax--section.syntax--embedded {
+  color: #b5aab7;
+}
+.syntax--php .syntax--punctuation.syntax--definition.syntax--variable {
+  color: #aa6bc5;
+}
+.syntax--source.syntax--ruby .syntax--meta {
+  color: #b5aab7;
+}
+.syntax--source.syntax--ruby .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--source.syntax--ruby .syntax--punctuation.syntax--section.syntax--regexp {
+  color: #ba8a00;
+}
+.syntax--source.syntax--ruby .syntax--keyword {
+  color: #5a7acd;
+}
+.syntax--source.syntax--ruby .syntax--keyword.syntax--operator {
+  color: #439b9b;
+}
+.syntax--source.syntax--ruby .syntax--variable {
+  color: #4da35c;
+}
+.syntax--source.syntax--ruby .syntax--name {
+  color: #aa6bc5;
+}
+.syntax--source.syntax--ruby .syntax--string {
+  color: #c25783;
+}
+.syntax--source.syntax--ruby .syntax--character.syntax--escape {
+  color: #c25a5b;
+}
+.syntax--source.syntax--ruby .syntax--support.syntax--class {
+  color: #aa6bc5;
+}
+.syntax--rust .syntax--support.syntax--function {
+  color: #4da35c;
+}
+.syntax--sass .syntax--at-rule .syntax--at-rule,
+.syntax--sass .syntax--at-rule .syntax--at-rule > .syntax--punctuation {
+  color: #5a7acd;
+}
+.syntax--sass .syntax--mixin + .syntax--function,
+.syntax--sass .syntax--include + .syntax--function {
+  color: #c25783;
+}
+.syntax--sass.syntax--property-value {
+  color: #4da35c;
+}
+.syntax--sass.syntax--property-value .syntax--function {
+  color: #aa6bc5;
+}
+.syntax--sass.syntax--property-value .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--sass.syntax--variable.syntax--parameter.syntax--url {
+  color: #4da35c;
+}
+.syntax--sass.syntax--class,
+.syntax--sass.syntax--parent-selector-suffix {
+  color: #5a7acd;
+}
+.syntax--scss .syntax--at-rule .syntax--at-rule,
+.syntax--scss .syntax--at-rule .syntax--at-rule > .syntax--punctuation {
+  color: #5a7acd;
+}
+.syntax--scss .syntax--mixin + .syntax--function,
+.syntax--scss .syntax--include + .syntax--function {
+  color: #c25783;
+}
+.syntax--scss.syntax--property-value {
+  color: #4da35c;
+}
+.syntax--scss.syntax--property-value .syntax--function {
+  color: #aa6bc5;
+}
+.syntax--scss.syntax--property-value .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--scss.syntax--variable.syntax--parameter.syntax--url {
+  color: #4da35c;
+}
+.syntax--scss.syntax--class,
+.syntax--scss.syntax--parent-selector-suffix {
+  color: #5a7acd;
+}
+.syntax--scss .syntax--support.syntax--function {
+  color: #439b9b;
+}
+.syntax--scss .syntax--keyword.syntax--control {
+  color: #5a7acd;
+}
+.syntax--scss .syntax--punctuation.syntax--definition.syntax--keyword {
+  color: #5a7acd;
+}
+.syntax--scss .syntax--punctuation.syntax--definition.syntax--string {
+  color: #c25783;
+}
+.syntax--scss .syntax--punctuation.syntax--definition.syntax--constant {
+  color: #4da35c;
+}
+.syntax--scss .syntax--variable.syntax--interpolation {
+  color: #4da35c;
+}
+.syntax--scss .syntax--string.syntax--quoted {
+  color: #c25783;
+}
+.syntax--scss .syntax--entity.syntax--name.syntax--function {
+  color: #439b9b;
+}
+.syntax--slim.syntax--meta {
+  color: #857a87;
+}
+.syntax--slim.syntax--text {
+  color: #b5aab7;
+}
+.syntax--slim .syntax--string.syntax--quoted {
+  color: #c25783;
+}
+.syntax--slim .syntax--string.syntax--id {
+  color: #4da35c;
+}
+.syntax--stylus .syntax--function .syntax--name {
+  color: #c25783;
+}
+.syntax--tex .syntax--other {
+  color: #c25783;
+}
+.syntax--tex .syntax--reference {
+  color: #aa6bc5;
+}
+.syntax--plain .syntax--text {
+  color: #b5aab7;
+}
+.syntax--yaml .syntax--tag {
+  color: #5a7acd;
+}
+.syntax--yaml .syntax--string {
+  color: #b5aab7;
+}
+.syntax--yaml .syntax--string.syntax--quoted {
+  color: #c25783;
+}
+.syntax--yaml .syntax--constant {
+  color: #4da35c;
+}
+.syntax--yaml .syntax--punctuation {
+  color: #857a87;
+}
+.syntax--yaml .syntax--punctuation.syntax--string {
+  color: #c25783;
+}
+</style>
+  </head>
+  <body class='markdown-preview' data-use-github-style><h1 id="cornet-js-the-humane-javascript-library-for-modern-and-honest-web-notifications-">Cornet.JS: The Humane JavaScript Library for Modern and Honest Web Notifications.</h1>
+<p>An open source project by Toby56 under the GNU General Public License.</p>
+<p><a href="https://github.com/cornet-js/Cornet.JS"><img src="https://img.shields.io/github/stars/cornet-js/Cornet.JS.svg?style=social" alt="GitHub Stars"></a> <a href="https://www.bithound.io/github/cornet-js/Cornet.JS"><img src="https://www.bithound.io/github/cornet-js/Cornet.JS/badges/score.svg" alt="BitHound Score"></a> <a href="https://github.com/cornet-js/Cornet.JS/releases"><img src="https://img.shields.io/github/downloads/cornet-js/Cornet.JS/total.svg" alt="Github Downloads All Releases"></a> <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="XO code style"></a> <a href="https://gitter.im/cornet-js/Cornet.JS?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/cornet-js/Cornet.JS.svg" alt="Join the chat at https://gitter.im/cornet-js/Cornet.JS"></a></p>
+<h2 id="info-">Info:</h2>
+<p>Cornet.JS is not yet out of its beta stages and available for use but will be soon, along with its own website.</p>
+<hr>
+<h2 id="todos-">Todos:</h2>
+<ul>
+<li><label>
+  <input type="checkbox" class="task-list-item-checkbox" checked>
+   Start project.
+</label></li>
+<li><label>
+  <input type="checkbox" class="task-list-item-checkbox" checked>
+   First beta release!
+</label></li>
+<li><label>
+  <input type="checkbox" class="task-list-item-checkbox">
+   Major improvements.
+</label></li>
+<li><label>
+  <input type="checkbox" class="task-list-item-checkbox">
+   Release first stable version.
+</label></li>
+<li><label>
+  <input type="checkbox" class="task-list-item-checkbox">
+   Make website.
+</label></li>
+</ul>
+<hr>
+<p>&lt;&gt; with ❤ by <code>Toby56</code></p></body>
+</html>
