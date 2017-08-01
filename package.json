@@ -3,24 +3,33 @@
   "version": "0.2.1",
   "description": "The Humane JavaScript Library for Modern and Honest Web Notifications. An open source project by Toby56 under the GNU General Public License.",
   "main": "cornet.js",
-  "Cornet.JSsitory": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/cornet-js/Cornet.JS.git"
   },
   "author": "Toby56",
-  "license": "GNU General Public License",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/cornet-js/Cornet.JS/issues"
   },
   "homepage": "https://cornet-js.github.io/",
+  "scripts": {
+    "test": "xo"
+  },
   "devDependencies": {
     "xo": "0.18.2",
     "eslint": "4.3.0"
   },
   "xo": {
     "rules": {
-      "quotes": [1, "double"],
-      "quote-props": [1, "consistent-as-needed"],
+      "quotes": [
+        1,
+        "double"
+      ],
+      "quote-props": [
+        1,
+        "consistent-as-needed"
+      ],
       "no-var": 0,
       "object-shorthand": 0,
       "prefer-arrow-callback": 0,
@@ -28,17 +37,32 @@
     },
     "semicolon": true,
     "space": 2,
-    "envs": ["browser"],
-    "ignores": ["**.min.js", "**.html", "**/lib/**.js"]
+    "envs": [
+      "browser"
+    ],
+    "ignores": [
+      "**.min.js",
+      "**.html",
+      "**/lib/**.js"
+    ]
   },
   "eslintConfig": {
     "rules": {
-      "quotes": [1, "double"],
-      "quote-props": [1, "consistent-as-needed"],
+      "quotes": [
+        1,
+        "double"
+      ],
+      "quote-props": [
+        1,
+        "consistent-as-needed"
+      ],
       "no-var": 0,
       "object-shorthand": 0,
       "prefer-arrow-callback": 0,
       "no-prototype-builtins": 0
     }
+  },
+  "directories": {
+    "test": "test"
   }
 }
