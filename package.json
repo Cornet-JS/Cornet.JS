@@ -1,29 +1,37 @@
 {
   "name": "Cornet.JS",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "The Humane JavaScript Library for Modern and Honest Web Notifications. An open source project by Toby56 under the GNU General Public License.",
-  "main": "/cornet.js",
-  "author": "Toby56",
-  "website": "https://cornet-js.github.io/",
-  "license": "GNU General Public License",
-  "devDependencies": {
-    "xo": "0.18.2",
-    "eslint": "4.2.0"
+  "main": "cornet.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cornet-js/Cornet.JS.git"
   },
-  "eslintConfig": {
-    "rules": {
-      "quotes": [1, "double"],
-      "quote-props": [1, "consistent-as-needed"],
-      "no-var": 0,
-      "object-shorthand": 0,
-      "prefer-arrow-callback": 0,
-      "no-prototype-builtins": 0
-    }
+  "author": "Toby56",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/cornet-js/Cornet.JS/issues"
+  },
+  "homepage": "https://cornet-js.github.io/",
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "bithound": "^1.7.0",
+    "eslint": "4.3.0",
+    "xo": "0.18.2"
   },
   "xo": {
     "rules": {
-      "quotes": [1, "double"],
-      "quote-props": [1, "consistent-as-needed"],
+      "quotes": [
+        1,
+        "double"
+      ],
+      "quote-props": [
+        1,
+        "consistent-as-needed"
+      ],
       "no-var": 0,
       "object-shorthand": 0,
       "prefer-arrow-callback": 0,
@@ -31,7 +39,36 @@
     },
     "semicolon": true,
     "space": 2,
-    "envs": ["browser"],
-    "ignores": ["**.min.js", "**.html", "**/lib/**.js"]
+    "envs": [
+      "browser",
+      "node"
+    ],
+    "ignores": [
+      "**.min.js",
+      "**.html",
+      "**/lib/**.js"
+    ]
+  },
+  "eslintConfig": {
+    "rules": {
+      "quotes": [
+        1,
+        "double"
+      ],
+      "quote-props": [
+        1,
+        "consistent-as-needed"
+      ],
+      "no-var": 0,
+      "object-shorthand": 0,
+      "prefer-arrow-callback": 0,
+      "no-prototype-builtins": 0
+    }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "primer-css": "^9.2.0"
   }
 }
