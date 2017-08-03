@@ -12,8 +12,7 @@ after_script:
 test1:
  stage: test
  script:
-   - npm install -g xo@latest
-   - xo --init
+   - npm install
    - npm test
 
 test2:
