@@ -1,4 +1,4 @@
-image: busybox:latest
+image: node:4.2.2
 
 before_script:
    - echo "Before script section"
@@ -12,8 +12,9 @@ after_script:
 test1:
  stage: test
  script:
-   - npm install -g XO
-   - echo "For example run a test suite"
+   - npm install -g xo@latest
+   - xo --init
+   - npm test
 
 test2:
  stage: test
