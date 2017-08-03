@@ -14,14 +14,9 @@
   },
   "homepage": "https://cornet-js.github.io/",
   "scripts": {
-    "test": "xo && ava"
+    "test": ""
   },
-  "devDependencies": {
-    "ava": "^0.21.0",
-    "bithound": "^1.7.0",
-    "eslint": "4.3.0",
-    "xo": "0.18.2"
-  },
+  "devDependencies": {},
   "xo": {
     "rules": {
       "quotes": [
@@ -67,8 +62,5 @@
   },
   "directories": {
     "test": "test"
-  },
-  "dependencies": {
-    "primer-css": "^9.2.0"
   }
 }
