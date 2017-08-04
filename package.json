@@ -14,9 +14,12 @@
   },
   "homepage": "https://cornet-js.github.io/",
   "scripts": {
-    "test": ""
+    "test": "xo"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "bithound": "^1.7.0",
+    "xo": "^0.18.2"
+  },
   "xo": {
     "rules": {
       "quotes": [
@@ -59,8 +62,5 @@
       "prefer-arrow-callback": 0,
       "no-prototype-builtins": 0
     }
-  },
-  "directories": {
-    "test": "test"
   }
 }
