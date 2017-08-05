@@ -23,3 +23,8 @@ Todos:
 
 --------------------------------------------------------------------------------
 <> with ❤ by `Toby56`
+> Cornet.JS  Copyright (C) 2017  Toby56 (https://github.com/Toby56)
+
+> This program comes with ABSOLUTELY NO WARRANTY.
+> This is free software, and you are welcome to redistribute it under certain
+> conditions. See [`LICENSE`](/LICENSE) for details.
