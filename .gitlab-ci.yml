@@ -8,20 +8,21 @@ stages:
   - test
 
 before_script:
-  - echo "Install:"
+  - echo "INSTALL:"
   - npm install --only=dev
 
 after_script:
-  - echo "Done!"
+  - echo "DONE!"
 
 Test:
   stage: test
   script:
-   - echo "Test:"
+   - echo "TESTS:"
    - npm test
 
 Bithound:
   stage: test
   script:
-    - echo "Bithound:"
-    - node_modules/.bin/bithound check git@github.com:Cornet-JS/Cornet.JS.git
+    - echo "BITHOUND:"
+    - echo "Removed momentarily"
+#   - node_modules/.bin/bithound check git@github.com:Cornet-JS/Cornet.JS.git
