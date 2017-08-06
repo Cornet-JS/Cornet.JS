@@ -1,5 +1,7 @@
-// Cornet.JS: The Humane JavaScript Library for Modern and Honest Web Notifications.
-// An open source project by Toby56 under the GNU General Public License.
+// Cornet.JS: The Humane JavaScript Library for Modern and Honest Web
+// Notifications. An open source project by Toby56 under the GNU General Public
+// License.
+//
 // Copyright (C) 2017  Toby56 (https://github.com/Toby56)
 //
 // This program is free software: you can redistribute it and/or modify
@@ -14,15 +16,33 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+// TODO:
+//   - Complete major changes!
 
 (function () {
   // LOCAL VARIABLES
   var body = document.body;
 
-  function getElt(selector) {
+  var getElt = function (selector) {
     var elt = document.querySelectorAll(selector);
     return (elt === null ? false : elt);
-  }
+  };
+
+  var testJSON = function (JSON) {
+    if (JSON.constructor === String) {
+      try {
+        return JSON.parse(JSON).constructor !== Object;
+      } catch (err) {
+        return err;
+      }
+    } else {
+      try {
+        return JSON.parse(JSON.stringify(JSON)).constructor !== Object;
+      } catch (err) {
+        return err;
+      }
+    }
+  };
 
   var DOMIsInitiated = false;
   var configIsInitiated = false;
@@ -67,31 +87,24 @@
 
     var optionsDefaults = {};
 
-    if (type === undefined || type === null || type.constructor !== String) {
+    if (!type || type.constructor !== String) {
       return "Type was not a String";
     }
 
-    if (content === undefined || content === null || content.constructor !== String) {
+    if (!content || content.constructor !== String) {
       return "Content was not a String";
     }
 
-    if (options === undefined || options === null || (function () {
-      if (options.constructor === String) {
-        try {
-          return JSON.parse(options).constructor !== Object;
-        } catch (err) {
-          callback.push(err.name + ": " + err.message);
-          return true;
-        }
+    if (!options) {
+      var result = testJSON(options);
+      if (result === false) {
+        return "Options were not an Object";
       }
       try {
-        return JSON.parse(JSON.stringify(options)).constructor !== Object;
+
       } catch (err) {
-        callback.push(err.name + ": " + err.message);
-        return true;
+
       }
-    })()) {
-      return "Options were not an Object";
     }
 
     var elt = getElt("#cornetjs ul.cornetjs-notifications").appendChild(document.createElement("li"));
@@ -163,13 +176,13 @@
         try {
           return JSON.parse(configuration).constructor !== Object;
         } catch (err) {
-          return "[" + err.name + "] " + err.message;
+          return err.name + ": " + err.message;
         }
       } else {
         try {
           return JSON.parse(JSON.stringify(configuration)).constructor !== Object;
         } catch (err) {
-          return "[" + err.name + "] " + err.message;
+          return err.name + ": " + err.message;
         }
       }
     })()) {
