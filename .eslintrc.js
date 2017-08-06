@@ -19,6 +19,14 @@ module.exports = {
         "semi": [
             "error",
             "always"
+        ],
+        "no-warning-comments": [0, {
+          "terms": [
+            "todo",
+            "fixme"
+          ],
+          "location": "start"
+          }
         ]
     }
 };

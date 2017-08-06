@@ -100,11 +100,6 @@
       if (result === false) {
         return "Options were not an Object";
       }
-      try {
-
-      } catch (err) {
-
-      }
     }
 
     var elt = getElt("#cornetjs ul.cornetjs-notifications").appendChild(document.createElement("li"));
