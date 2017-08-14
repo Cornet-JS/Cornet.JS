@@ -9,19 +9,13 @@ stages:
 
 before_script:
   - echo "INSTALL:"
-  - npm install --only=dev
+  - npm install
 
 after_script:
   - echo "DONE!"
 
-Test:
+Tests:
   stage: test
   script:
    - echo "TESTS:"
    - npm test
-
-Bithound:
-  stage: test
-  script:
-    - echo "BITHOUND:"
-    - node_modules/.bin/bithound check git@github.com:Cornet-JS/Cornet.JS.git

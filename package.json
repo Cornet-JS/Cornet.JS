@@ -14,7 +14,7 @@
   },
   "homepage": "https://cornet-js.github.io/",
   "scripts": {
-    "test": "xo"
+    "test": "xo && bithound check git@github.com:Cornet-JS/Cornet.JS.git"
   },
   "devDependencies": {
     "bithound": "^1.7.0",
