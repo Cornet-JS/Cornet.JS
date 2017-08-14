@@ -24,5 +24,4 @@ Bithound:
   stage: test
   script:
     - echo "BITHOUND:"
-    - echo "Removed momentarily"
-#   - node_modules/.bin/bithound check git@github.com:Cornet-JS/Cornet.JS.git
+    - node_modules/.bin/bithound check git@github.com:Cornet-JS/Cornet.JS.git
