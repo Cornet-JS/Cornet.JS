@@ -16,8 +16,6 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
-// TODO:
-//   - Complete major changes!
 
 (function () {
   // LOCAL VARIABLES
@@ -33,13 +31,13 @@
       try {
         return JSON.parse(JSON).constructor !== Object;
       } catch (err) {
-        return err;
+        return false;
       }
     } else {
       try {
         return JSON.parse(JSON.stringify(JSON)).constructor !== Object;
       } catch (err) {
-        return err;
+        return false;
       }
     }
   };
@@ -52,10 +50,7 @@
     "position": "bottom-right",
     "width": "200px",
     "width-max": "50vw",
-    "width-min": "100px",
-    "callback": function () {
-      console.log("Cornet.JS was successful.");
-    }
+    "width-min": "100px"
   };
 
   // GLOBAL VARIABLES
@@ -72,20 +67,17 @@
     }
     for (var key1 in configDefaults) {
       if (configDefaults.hasOwnProperty(key1)) {
-        CornetJS.config[key1] = configDefaults[key1];
-      }
-    }
-    for (var key2 in newConfig) {
-      if (configDefaults.hasOwnProperty(key2)) {
-        CornetJS.config[key2] = newConfig[key2];
+        if (newConfig.hasOwnProperty(key1)) {
+          CornetJS.config[key1] = newConfig[key1];
+        }
       }
     }
   };
   CornetJS.notifications = [];
   CornetJS.new = function (type, content, options) {
-    var callback = [];
-
-    var optionsDefaults = {};
+    var optionsDefaults = {
+      timeout: 8
+    };
 
     if (!type || type.constructor !== String) {
       return "Type was not a String";
@@ -122,12 +114,9 @@
     }
     for (var key1 in optionsDefaults) {
       if (optionsDefaults.hasOwnProperty(key1)) {
-        options[key1] = optionsDefaults[key1];
-      }
-    }
-    for (var key2 in options) {
-      if (!optionsDefaults.hasOwnProperty(key2)) {
-        callback.push("Warning: Extra property in configuration \"" + key2 + "\"");
+        if (!options.hasOwnProperty(key1)) {
+          options[key1] = optionsDefaults[key1];
+        }
       }
     }
   };
