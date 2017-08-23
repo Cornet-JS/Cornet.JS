@@ -5,7 +5,7 @@
   "main": "cornet.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cornet-js/Cornet.JS.git"
+    "url": "git+https://gitlab.com/Cornet-JS/Cornet.JS.git"
   },
   "author": "Toby56",
   "license": "GPL-3.0",
@@ -19,7 +19,10 @@
   "devDependencies": {
     "bithound": "^1.7.0",
     "xo": "^0.18.2",
-    "eslint": "^4.4.1"
+    "eslint": "^4.4.1",
+    "showdown": "^1.7.2",
+    "html5-to-pdf": "^2.2.4",
+    "uglify-js": "^3.0.28"
   },
   "xo": {
     "rules": {
