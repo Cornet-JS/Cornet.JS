@@ -13,9 +13,6 @@
     "url": "https://github.com/cornet-js/Cornet.JS/issues"
   },
   "homepage": "https://cornet-js.github.io/",
-  "scripts": {
-    "test": "node scripts/test.js"
-  },
   "devDependencies": {
     "bithound": "^1.7.0",
     "xo": "^0.18.2",
