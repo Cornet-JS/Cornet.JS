@@ -19,7 +19,7 @@ test:
 
 dist:
   stage: dist
-   artifacts:
+  artifacts:
     paths:
       - dist/
   script:
