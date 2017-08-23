@@ -4,10 +4,6 @@ cache:
   paths:
   - node_modules/
 
-artifacts:
-  paths:
-    - dist/
-
 stages:
   - test
   - dist
@@ -19,22 +15,25 @@ test:
   stage: test
   script:
     - echo "Test files"
-    - /node_modules/.bin/xo cornet.js
+    - node_modules/.bin/xo cornet.js
 
 dist:
   stage: dist
+   artifacts:
+    paths:
+      - dist/
   script:
     - echo "Make directories"
     - mkdir dist
     - mkdir dist/themes
     - echo "Copy files"
     - cp -v CHANGELOG.md cornet.js LICENSE package.json README.md /dist
-    - cp -v /themes/. /dist/themes
+    - cp -v themes/. /dist/themes
     - echo "Minify files"
     - shopt -s nullglob
-    - /node_modules/.bin/uglifyjs cornet.js --ie8 --verbose --output dist/cornet.min.js
+    - node_modules/.bin/uglifyjs cornet.js --ie8 --verbose --output dist/cornet.min.js
     - for f in /dist/themes/*.css
     - do
     -   echo "Minifying $f"
-    -   /node_modules/.bin/clean-css --debug --compatability --output "dist/$f" "$f"
+    -   node_modules/.bin/clean-css --debug --compatability --output "dist/$f" "$f"
     - done
