@@ -14,7 +14,7 @@
   },
   "homepage": "https://cornet-js.github.io/",
   "scripts": {
-    "test": "xo"
+    "test": "node scripts/test.js"
   },
   "devDependencies": {
     "bithound": "^1.7.0",
