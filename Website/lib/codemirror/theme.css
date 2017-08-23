@@ -1,0 +1,192 @@
+/* Codemirror Syntax Theme and other styling */
+
+/* hadrien-dark Syntax Theme */
+
+code > span.cm-s-hadrien-dark {
+  background-color: rgba(108, 103, 131, 0.2);
+  padding: 0 2px;
+  line-height: 100%;
+  border-radius: 2px;
+}
+
+.cm-s-hadrien-dark.CodeMirror {
+  background: #2a2734;
+  color: #6c6783;
+  height: 200px !important;
+}
+
+.cm-s-hadrien-dark div.CodeMirror-selected {
+  background: #545167!important;
+}
+
+.cm-s-hadrien-dark .CodeMirror-gutters {
+  background: #2a2734;
+  border-right: 0px;
+}
+
+.cm-s-hadrien-dark .CodeMirror-linenumber {
+  color: #545167;
+}
+
+
+/* begin cursor */
+
+.cm-s-hadrien-dark .CodeMirror-cursor {
+  border-left: 1px solid #ffad5c;
+}
+
+.cm-s-hadrien-dark .CodeMirror-activeline-background {
+  background: #363342;
+  /* background: #36334280;  */
+  opacity: .5;
+}
+
+.cm-s-hadrien-dark .cm-fat-cursor .CodeMirror-cursor {
+  background: #ffad5c;
+  /* background: #ffad5c80; */
+}
+
+
+/* end cursor */
+
+.cm-s-hadrien-dark span.cm-atom, .cm-s-hadrien-dark span.cm-number, .cm-s-hadrien-dark span.cm-keyword, .cm-s-hadrien-dark span.cm-variable, .cm-s-hadrien-dark span.cm-attribute, .cm-s-hadrien-dark span.cm-quote, .cm-s-hadrien-dark span.cm-hr, .cm-s-hadrien-dark span.cm-link {
+  color: #ffcc99;
+}
+
+.cm-s-hadrien-dark span.cm-property {
+  color: #9a86fd;
+}
+
+.cm-s-hadrien-dark span.cm-punctuation, .cm-s-hadrien-dark span.cm-unit, .cm-s-hadrien-dark span.cm-negative {
+  color: #e09142;
+}
+
+.cm-s-hadrien-dark span.cm-string {
+  color: #ffb870;
+}
+
+.cm-s-hadrien-dark span.cm-operator {
+  color: #ffad5c;
+}
+
+.cm-s-hadrien-dark span.cm-positive {
+  color: #6a51e6;
+}
+
+.cm-s-hadrien-dark span.cm-variable-2, .cm-s-hadrien-dark span.cm-variable-3, .cm-s-hadrien-dark span.cm-string-2, .cm-s-hadrien-dark span.cm-url {
+  color: #7a63ee;
+}
+
+.cm-s-hadrien-dark span.cm-def, .cm-s-hadrien-dark span.cm-tag, .cm-s-hadrien-dark span.cm-builtin, .cm-s-hadrien-dark span.cm-qualifier, .cm-s-hadrien-dark span.cm-header, .cm-s-hadrien-dark span.cm-em {
+  color: #eeebff;
+}
+
+.cm-s-hadrien-dark span.cm-bracket, .cm-s-hadrien-dark span.cm-comment {
+  color: #6c6783;
+}
+
+
+/* using #f00 red for errors, don't think any of the colorscheme variables will stand out enough, ... maybe by giving it a background-color ... */
+
+.cm-s-hadrien-dark span.cm-error, .cm-s-hadrien-dark span.cm-invalidchar {
+  color: #f00;
+}
+
+.cm-s-hadrien-dark span.cm-header {
+  font-weight: normal;
+}
+
+.cm-s-hadrien-dark .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: #eeebff !important;
+}
+
+.cm-s-hadrien-light.CodeMirror {
+  background: #faf8f5;
+  color: #b29762;
+}
+
+.cm-s-hadrien-light div.CodeMirror-selected {
+  background: #e3dcce !important;
+}
+
+.cm-s-hadrien-light .CodeMirror-gutters {
+  background: #faf8f5;
+  border-right: 0px;
+}
+
+.cm-s-hadrien-light .CodeMirror-linenumber {
+  color: #cdc4b1;
+}
+
+
+/* begin cursor */
+
+.cm-s-hadrien-light .CodeMirror-cursor {
+  border-left: 1px solid #93abdc;
+}
+
+.cm-s-hadrien-light .CodeMirror-activeline-background {
+  background: #e3dcce;
+  /* background: #e3dcce80; */
+  opacity: .5;
+}
+
+.cm-s-hadrien-light .cm-fat-cursor .CodeMirror-cursor {
+  background: #93abdc;
+  /* #93abdc80; */
+}
+
+
+/* end cursor */
+
+.cm-s-hadrien-light span.cm-atom, .cm-s-hadrien-light span.cm-number, .cm-s-hadrien-light span.cm-keyword, .cm-s-hadrien-light span.cm-variable, .cm-s-hadrien-light span.cm-attribute, .cm-s-hadrien-light span.cm-quote, .cm-s-hadrien-light-hadrien-light span.cm-hr, .cm-s-hadrien-light-hadrien-light span.cm-link {
+  color: #063289;
+}
+
+.cm-s-hadrien-light span.cm-property {
+  color: #b29762;
+}
+
+.cm-s-hadrien-light span.cm-punctuation, .cm-s-hadrien-light span.cm-unit, .cm-s-hadrien-light span.cm-negative {
+  color: #063289;
+}
+
+.cm-s-hadrien-light span.cm-string, .cm-s-hadrien-light span.cm-operator {
+  color: #1659df;
+}
+
+.cm-s-hadrien-light span.cm-positive {
+  color: #896724;
+}
+
+.cm-s-hadrien-light span.cm-variable-2, .cm-s-hadrien-light span.cm-variable-3, .cm-s-hadrien-light span.cm-string-2, .cm-s-hadrien-light span.cm-url {
+  color: #896724;
+}
+
+.cm-s-hadrien-light span.cm-def, .cm-s-hadrien-light span.cm-tag, .cm-s-hadrien-light span.cm-builtin, .cm-s-hadrien-light span.cm-qualifier, .cm-s-hadrien-light span.cm-header, .cm-s-hadrien-light span.cm-em {
+  color: #2d2006;
+}
+
+.cm-s-hadrien-light span.cm-bracket, .cm-s-hadrien-light span.cm-comment {
+  color: #b6ad9a;
+}
+
+
+/* using #f00 red for errors, don't think any of the colorscheme variables will stand out enough, ... maybe by giving it a background-color ... */
+
+
+/* .cm-s-hadrien-light span.cm-error { background: #896724; color: #728fcb; } */
+
+.cm-s-hadrien-light span.cm-error, .cm-s-hadrien-light span.cm-invalidchar {
+  color: #f00;
+}
+
+.cm-s-hadrien-light span.cm-header {
+  font-weight: normal;
+}
+
+.cm-s-hadrien-light .CodeMirror-matchingbracket {
+  text-decoration: underline;
+  color: #faf8f5 !important;
+}
