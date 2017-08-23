@@ -6,5 +6,10 @@
     "lint": {
       "engine": "eslint"
     }
-  }
+  },
+  "ignore": [
+    "**/node_modules/**",
+    "**/Documentation/**",
+    "**/Website/**"
+  ]
 }
