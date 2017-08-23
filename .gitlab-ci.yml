@@ -32,8 +32,4 @@ dist:
     - echo "Minify files"
     - shopt -s nullglob
     - node_modules/.bin/uglifyjs cornet.js --ie8 --verbose --output dist/cornet.min.js
-    - for f in /dist/themes/*.css
-    - do
-    -   echo "Minifying $f"
-    -   node_modules/.bin/clean-css --debug --compatability --output "dist/$f" "$f"
-    - done
+    - for f in /dist/themes/*.css; do node_modules/.bin/clean-css --debug --compatability --output "dist/$f" "$f"; done
