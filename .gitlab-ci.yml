@@ -19,7 +19,7 @@ test:
 
 dist:
   stage: dist
-   artifacts:
+  artifacts:
     paths:
       - dist/
   script:
@@ -27,7 +27,7 @@ dist:
     - mkdir dist
     - mkdir dist/themes
     - echo "Copy files"
-    - cp -v CHANGELOG.md cornet.js LICENSE package.json README.md /dist
+    - cp -v CHANGELOG.md cornet.js LICENSE package.json README.md dist/
     - cp -v themes/. /dist/themes
     - echo "Minify files"
     - shopt -s nullglob
