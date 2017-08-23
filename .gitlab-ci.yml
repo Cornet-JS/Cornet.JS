@@ -27,8 +27,8 @@ dist:
     - mkdir dist
     - mkdir dist/themes
     - echo "Copy files"
-    - cp -verbose -recursive themes/. dist/themes
-    - cp -verbose CHANGELOG.md cornet.js LICENSE package.json README.md dist/
+    - cp --verbose --recursive themes/. dist/themes
+    - cp --verbose CHANGELOG.md cornet.js LICENSE package.json README.md dist/
     - echo "Minify files"
     - shopt -s nullglob
     - node_modules/.bin/uglifyjs cornet.js --ie8 --verbose --output dist/cornet.min.js
