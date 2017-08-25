@@ -16,6 +16,7 @@
   "devDependencies": {
     "bithound": "^1.7.0",
     "clean-css-cli": "^4.1.6",
+    "eslint": "^4.5.0",
     "html5-to-pdf": "^2.2.4",
     "showdown": "^1.7.2",
     "uglify-js": "^3.0.28",
