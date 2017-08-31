@@ -17,198 +17,231 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(function () {
-  // LOCAL VARIABLES
-  var body = document.body;
+var CornetJS = {};
 
+(function () {
   var getElt = function (selector) {
     var elt = document.querySelectorAll(selector);
     return (elt === null ? false : elt);
   };
 
-  var testJSON = function (JSON) {
-    if (JSON.constructor === String) {
-      try {
-        return JSON.parse(JSON).constructor !== Object;
-      } catch (err) {
-        return false;
-      }
-    } else {
-      try {
-        return JSON.parse(JSON.stringify(JSON)).constructor !== Object;
-      } catch (err) {
-        return false;
-      }
-    }
-  };
-
   var DOMIsInitiated = false;
+
   var configIsInitiated = false;
 
   var configDefaults = {
     "theme": "simple",
     "position": "bottom-right",
-    "width": "200px",
-    "width-max": "50vw",
-    "width-min": "100px"
+    "offset-top": "0",
+    "offset-bottom": "0",
+    "offset-side": "0"
+  };
+
+  var configData = {
+    "theme": {
+      configFnc: function (value) {
+        return value;
+      },
+      DOMFnc: function (value) {
+        if (value.constructor === String) {
+          var classList = CornetJS.DOM.getAttribute("class").split(" ");
+          value = value.split(" ");
+          classList.push("value");
+        }
+      }
+    },
+    "position": {
+      configFnc: function (value) {
+        return value;
+      },
+      DOMFnc: function (value) {
+        return value;
+      }
+    },
+    "offset-top": {
+      configFnc: function (value) {
+        return value;
+      },
+      DOMFnc: function (value) {
+        return value;
+      }
+    },
+    "offset-bottom": {
+      configFnc: function (value) {
+        return value;
+      },
+      DOMFnc: function (value) {
+        return value;
+      }
+    },
+    "offset-side": {
+      configFnc: function (value) {
+        return value;
+      },
+      DOMFnc: function (value) {
+        return value;
+      }
+    }
+  };
+
+  var optionsDefaults = {
+    timeout: 8
   };
 
   // GLOBAL VARIABLES
-  // Main global variable
-  var CornetJS = {};
 
   CornetJS.config = {};
 
   CornetJS.DOM = null;
 
+  CornetJS.notifications = [];
+
   CornetJS.updateConfig = function (newConfig) {
-    if (configIsInitiated === false || CornetJS.DOM === null) {
-      return "DOM is not Initiated";
+    if (configIsInitiated === false) {
+      return "Config is not Initiated";
     }
+
+    if (!newConfig || newConfig.contructor !== Object) {
+      return "JSON is not valid";
+    }
+
     for (var key1 in configDefaults) {
-      if (configDefaults.hasOwnProperty(key1)) {
-        if (newConfig.hasOwnProperty(key1)) {
-          CornetJS.config[key1] = newConfig[key1];
-        }
+      if (configDefaults.hasOwnProperty(key1) && newConfig.hasOwnProperty(key1)) {
+        CornetJS.config[key1] = newConfig[key1];
       }
     }
   };
-  CornetJS.notifications = [];
-  CornetJS.new = function (type, content, options) {
-    var optionsDefaults = {
-      timeout: 8
-    };
 
+  CornetJS.new = function (type, content, options) {
     if (!type || type.constructor !== String) {
-      return "Type was not a String";
+      return "Type is not a string";
     }
 
     if (!content || content.constructor !== String) {
-      return "Content was not a String";
+      return "Content is not a string";
     }
 
-    if (!options) {
-      var result = testJSON(options);
-      if (result === false) {
-        return "Options were not an Object";
-      }
+    if (!options || options.constructor !== Object) {
+      return "Options were not an object";
     }
 
     var elt = getElt("#cornetjs ul.cornetjs-notifications").appendChild(document.createElement("li"));
+
     var eltClasses = ["cornetjs-notification"];
+
     elt.className = eltClasses.join(" ");
 
     type = type.toLowerCase();
-    var notificationTypes = ["success", "info", "warning", "error"];
-    for (var index = 0; index < notificationTypes.length; index++) {
-      if (type === notificationTypes[index]) {
-        type = notificationTypes[index];
-        break;
-      } else if (index === notificationTypes.length - 1) {
-        return "Type was not an allowed value";
-      }
+
+    if (type !== "success" && type !== "info" && type !== "warning" && type !== "error") {
+      return "Type was not an allowed value";
     }
+
     var id = CornetJS.notifications.length + 1;
+
     for (var i = 0; i < 6 - id.length;) {
       id = "0" + id;
     }
+
     for (var key1 in optionsDefaults) {
-      if (optionsDefaults.hasOwnProperty(key1)) {
-        if (!options.hasOwnProperty(key1)) {
-          options[key1] = optionsDefaults[key1];
-        }
+      if (optionsDefaults.hasOwnProperty(key1) && !options.hasOwnProperty(key1)) {
+        options[key1] = optionsDefaults[key1];
       }
     }
   };
+
   CornetJS.newSuccess = function (content, options) {
     var type = "success";
     return CornetJS.new(type, content, options);
   };
+
   CornetJS.newInfo = function (content, options) {
     var type = "info";
     return CornetJS.new(type, content, options);
   };
+
   CornetJS.newWarning = function (content, options) {
     var type = "warning";
     return CornetJS.new(type, content, options);
   };
+
   CornetJS.newError = function (content, options) {
     var type = "error";
     return CornetJS.new(type, content, options);
   };
-  CornetJS.initOnLoad = function (config) {
-    if (document.readyState === "interactive") {
-      CornetJS.init(config);
-    } else {
-      document.addEventListener("readystatechange", function () {
-        if (document.readyState === "interactive") {
-          CornetJS.init(config);
-        }
-      });
+
+  CornetJS.initDOM = function () {
+    if (DOMIsInitiated === true) {
+      return "DOM is allready initiated";
+    }
+
+    var elt = document.body.appendChild(document.createElement("div"));
+
+    elt.setAttribute("id", "cornetjs");
+
+    elt.innerHTML = "<div class='cornetjs-container cornetjs-outer-container'><ul class='cornetjs-notifications'><li class='cornetjs-notification'><div class='cornetjs-notification-inner'><div class='cornetjs-notification-title'>Title</div><div class='cornetjs-notification-content'>Content</div></div></li></ul></div>";
+
+    var eltProperties = ["theme", "position"];
+
+    var eltClasses = [];
+
+    for (var index1 = 0; index1 < eltProperties.length; index1++) {
+      eltClasses.push("config-" + eltProperties[index1] + "--" + CornetJS.config[eltProperties[index1]]);
+    }
+
+    elt.setAttribute("class", eltClasses.join(" "));
+
+    for (var index2 = 0; index2 < eltProperties.length; index2++) {
+      elt.setAttribute("data-config-" + eltProperties[index2], CornetJS.config[eltProperties[index2]]);
     }
   };
 
-  CornetJS.updateDOMClasses = function () {
+  CornetJS.initDOMOnLoad = function () {
+    if (document.readyState === "interactive" || document.readystate === "complete") {
+      return CornetJS.initDOM();
+    }
+
+    document.addEventListener("readystatechange", function () {
+      if (document.readyState === "interactive" || document.readystate === "complete") {
+        return CornetJS.initDOM();
+      }
+    });
+  };
+
+  CornetJS.updateDOM = function () {
     if (DOMIsInitiated === false || CornetJS.DOM === null) {
       return "DOM is not Initiated";
     }
   };
 
-  CornetJS.initConfig = function (configuration) {
-    if ((configuration === null || configuration === undefined) || (function () {
-      if (configuration.constructor === String) {
-        try {
-          return JSON.parse(configuration).constructor !== Object;
-        } catch (err) {
-          return err.name + ": " + err.message;
-        }
-      } else {
-        try {
-          return JSON.parse(JSON.stringify(configuration)).constructor !== Object;
-        } catch (err) {
-          return err.name + ": " + err.message;
-        }
-      }
-    })()) {
-      return "Configuration is not an object";
+  CornetJS.initConfig = function (config) {
+    if (configIsInitiated === true) {
+      return "Config is already initiated";
     }
 
-    CornetJS.config = {};
+    if (!config || config.constructor !== Object) {
+      return "Config is not an object";
+    }
+
+    configIsInitiated = true;
 
     for (var key1 in configDefaults) {
       if (configDefaults.hasOwnProperty(key1)) {
         CornetJS.config[key1] = configDefaults[key1];
       }
     }
-    for (var key2 in configuration) {
-      if (configDefaults.hasOwnProperty(key2)) {
-        CornetJS.config[key2] = configuration[key2];
-      }
-    }
+
+    CornetJS.updateConfig(config);
   };
-  CornetJS.initDOM = function () {
-    if (DOMIsInitiated === true) {
-      return "DOM is Already Initiated";
-    }
-    var elt = body.appendChild(document.createElement("div"));
-    elt.setAttribute("id", "cornetjs");
-    elt.innerHTML = "<div class='cornetjs-container cornetjs-outer-container'><ul class='cornetjs-notifications'><li class='cornetjs-notification'><div class='cornetjs-notification-inner'><div class='cornetjs-notification-title'>Title</div><div class='cornetjs-notification-content'>Content</div></div></li></ul></div>";
-    var eltProperties = ["theme", "position"];
-    var eltClasses = [];
-    for (var index1 = 0; index1 < eltProperties.length; index1++) {
-      eltClasses.push("config-" + eltProperties[index1] + "--" + CornetJS.config[eltProperties[index1]]);
-    }
-    elt.setAttribute("class", eltClasses.join(" "));
-    for (var index2 = 0; index2 < eltProperties.length; index2++) {
-      elt.setAttribute("data-config-" + eltProperties[index2], CornetJS.config[eltProperties[index2]]);
+
+  CornetJS.updateConfig = function (config) {
+    if (configIsInitiated === false) {
+      return "Config is not initiated yet\nThat must be done first";
     }
 
-    if (CornetJS.config.callback !== null && CornetJS.config.callback.constructor === Function) {
-      try {
-        var fnc = CornetJS.config.callback();
-        return fnc;
-      } catch (err) {
-        return err.name + ": " + err.message;
+    for (var key in configDefaults) {
+      if (configDefaults.hasOwnProperty(key) && config.hasOwnProperty(key)) {
+        CornetJS.config[key] = config[key];
       }
     }
   };

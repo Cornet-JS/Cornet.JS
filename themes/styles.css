@@ -1,37 +1,33 @@
 #cornetjs {
   position: fixed;
   height: 100%;
-  width: 4px;
+  width: 0;
   top: 0;
   bottom: 0;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   overflow: visible;
-  background-color: rgb(119, 0, 153);
 }
 
 #cornetjs .cornetjs-container {
   position: absolute;
+  width: 2px;
+  top: 20px;
+  bottom: 20px;
+  right: 20px;
   padding: 0;
   margin: 0;
+  background: red;
   box-sizing: border-box;
   overflow: visible;
 }
 
-.cornetjs-outer-container {
-  width: 0;
-  top: 20px;
-  bottom: 20px;
-  right: 14px;
-  left: 14px;
-}
-
-.cornetjs-config-position--top-right, .cornetjs-config-position--top-right .cornetjs-notifications, .cornetjs-config-position--bottom-right, .cornetjs-config-position--bottom-right .cornetjs-notifications {
+#cornetjs.config-position--top-right, #cornetjs.config-position--top-right .cornetjs-notifications, #cornetjs.config-position--bottom-right, #cornetjs.config-position--bottom-right .cornetjs-notifications {
   right: 0;
 }
 
-.cornetjs-config-position--top-left, .cornetjs-config-position--top-left .cornetjs-notifications, .cornetjs-config-position--bottom-left, .cornetjs-config-position--bottom-left .cornetjs-notifications {
+.config-position--top-left, .config-position--top-left .cornetjs-notifications, .config-position--bottom-left, .config-position--bottom-left .cornetjs-notifications {
   left: 0;
 }
 
